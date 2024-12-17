@@ -1,0 +1,61 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "My API"
+    },
+    "components": {
+        "schemas": {},
+        "parameters": {}
+    },
+    "paths": {
+        "/user/{id}": {
+            "get": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string",
+                            "minLength": 2,
+                            "maxLength": 10,
+                            "example": "10"
+                        },
+                        "required": true,
+                        "name": "id",
+                        "in": "path"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Retrieve the user",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string",
+                                            "example": "123"
+                                        },
+                                        "name": {
+                                            "type": "string",
+                                            "example": "Amith B V"
+                                        },
+                                        "age": {
+                                            "type": "number",
+                                            "example": 24
+                                        }
+                                    },
+                                    "required": [
+                                        "id",
+                                        "name",
+                                        "age"
+                                    ]
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
